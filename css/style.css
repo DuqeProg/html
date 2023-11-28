@@ -1,0 +1,106 @@
+/* Basic Selector */
+p {
+	font-style: italic;
+}
+p.class1 {
+	text-decoration: overline;
+}
+.class2 {
+	text-decoration: underline;
+}
+.header {
+	border: 3px green dotted;
+	text-decoration: line-through;
+}
+#style1 {
+	font-size: 20px;
+	color: blue;
+}
+#style2 {
+	font-size: 15px;
+	color: red;
+}
+
+/* Attribute Selector */
+a[target] {
+	font-size: 30pt;
+}
+a[target="_blank"] {
+	font-style: italic;
+}
+a[title~= "knou"] {
+	border: 3px red dotted;
+}
+a[title|="cs"] {
+	background-color: #000;
+	color: #fff;
+}
+a[href^="https"] {
+	font-size: 15px;
+}
+a[href$=".com"] {
+	text-decoration: overline;
+}
+a[href*="you"] {
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* Pseudo Selector */
+p {
+	font-size: 14px;
+}
+a:link {
+	color: red;
+}
+a:visited {
+	color: black;
+}
+a:hover {
+	font-size: 20px;
+}
+a:active {
+	background-color: yellow;
+}
+input[type="text"]:focus {
+	color: red;
+	font-style: italic;
+}
+input[type="text"]:enabled {
+	background-color: yellow;
+}
+input:disabled {
+	background-color:chartreuse;
+}
+input:checked {
+	width: 25px;
+	height: 25px;
+}
+input:not([type="text"]) {
+	color:rosybrown;
+}
+body {
+	font-size: 15px;
+	text-align: center;
+}
+tr:nth-child(even) { /* 2h+2 */
+	background-color:khaki;
+}
+tr:nth-child(2n+1) {
+	background-color:steelblue;
+}
+td:nth-last-child(1) {
+	color:red;
+	font-weight: bold;
+}
+td:nth-of-type(3) {
+	color:blue;
+}
+td:first-of-type {
+	color: green;
+	font-weight: bold;
+}
+tr:nth-child(1) {
+	background-color: lime;
+	font-weight: bold;
+}

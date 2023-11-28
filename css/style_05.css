@@ -1,0 +1,23 @@
+div li { /* All li of Descendant of <div> */
+    font-weight: bold;
+    color: #f00;
+}
+
+p > em { /* Child <em> of <p> */
+    font-size: 15px;
+    font-weight: bold;
+    color: #00f;
+}
+
+h2 + p { /* a Sibling <p> after <h1> */
+    background-color: cyan;
+}
+
+li.style1 ~ li { /* All Sibling <li> after <li class="style1">  */
+    background-color: yellow;
+}
+
+h2, p { /* Apply same style to <h1> and <p> */
+    font-style: italic;
+    font-family: cursive;
+}

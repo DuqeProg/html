@@ -1,0 +1,22 @@
+h1 {
+    font-variant: small-caps;
+    color: white;
+    background-color: blue;
+}
+p em {
+    font-size: 15pt;
+    font-style: normal;
+    font-weight: 700;
+    font-family: 고딕체, 궁서체, 명조체;
+}
+.style2 {
+    font-style: oblique;
+    font-size: larger;
+}
+@font-face {
+    font-family: 'myFont';
+    src: url(./font/myFont.otf);
+}
+.myfont {
+    font: 700 italic normal 18pt/150% myFont, Georgia, sans-serif
+}
