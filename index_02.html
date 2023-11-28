@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>basic :: jQuery example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+    <link rel="stylesheet" type="text/css" href="./css/style_02.css">
+    <script language="JavaScript" src="./js/script_02.js"></script>
+</head>
+
+<body>
+<form action="login.php" method="post">
+    <p>이름: <input type="text" name="id"></p>
+    <p>비번: <input type="password" name="pwd"></p>
+    <input type="button" value="로그인">
+</form>
+
+<h1>Text</h1>
+<form id="frm_id">
+    <p>Name: <input type="text" autofocus></p> <!-- autofocus가 다수일 경우 마지막 요소에 적용 -->
+    <p>Phone number: <input type="tel" required title="입력형식: 01X-XXXX-XXXX"></p> <!-- required 반드시 입력요구. title 전역속성 -->
+    <p>Birth date: <input type="text" name="bod" placeholder="YYYY-MM-DD" disabled></p> <!-- disable 된 요소는 서버로 전송되지 않음. -->
+    <textarea rows="5" cols="30"></textarea>
+    <p>Password: <input type="password"></p>
+    <p>Search: <input type="search" value="html5"></p> <!-- focus가 되면 초기화할 수 있는 "x"가 표시됨. -->
+    <p>URL: <input type="url" placeholder="http://www.google.com"></p>
+    <p>E-mail: <input type="email" multiple title="여러 메일주소 입력가능하며, 메일주소간에는 쉼표(,)로 구분"></p>
+</form>
+<input type="submit" form="frm_id"> <!-- input 요소가 form 외부에서 실행시-->
+
+<h1>Number</h1>
+<form id="num">
+    <p>Number type: <input type="number" min="1" max="10" step="0.5" value="1"></p>
+    <p>Range type: <input type="range" min="1" max="100" step="5" value="50"></p>
+    <input type="submit"> 
+</form>
+
+<h1>Selection</h1>
+<form id="selection">
+    <p>Gender:
+        <input type="radio" name="gender" value="male" checked>man
+        <input type="radio" name="gender" value="female">woman
+    </p>
+    <p>Grade:
+        <input type="radio" name="grade" value="1">Freshman
+        <input type="radio" name="grade" value="2" checked>Sophomore
+        <input type="radio" name="grade" value="3">junior
+        <input type="radio" name="grade" value="4">senior
+    </p>
+    <p>Subject1:
+        <input type="checkbox" name="subject1" value="c1">OS
+        <input type="checkbox" name="subject1" value="c2" checked>Programing
+        <input type="checkbox" name="subject1" value="c3">Database
+        <input type="checkbox" name="subject1" value="c4">AI
+    </p>
+    <p>Select2:
+        <select name="subject2" size="10">
+            <optgroup label="Freshman">
+                <option value="a1">Korean Language</option>
+                <option value="a2">English Language</option>
+                <option value="a3">Mathemetics</option>
+                <option value="a4">Economy</option>
+            </optgroup>
+            <optgroup label="Sophomore">
+                <option value="b1" selected>Korean Language</option>
+                <option value="b2">English Language</option>
+                <option value="b3">Mathemetics</option>
+                <option value="b4">Economy</option>
+            </optgroup>
+        </select>
+    </p>
+    <p>Web browser:
+        <input type="text" list="browsers">
+    </p>
+    <datalist id="browsers">
+        <option>Edge</option>
+        <option>Chrome</option>
+        <option>Opera</option>
+        <option>Explorer</option disabled>
+    </datalist>
+    <p>Color:
+        <input type="color" name="color">
+    </p>
+</form>
+<form enctype="multipart/form-data"> <!-- entype 폼데이터가 서버로 제출될때 데이터가 인코딩되는 방법 명시 -->
+    <p>File:</p>
+    <input type="file" accept="image/*" multiple> <!-- accept로 선택할 수 있는 파일 유형 지정 -->
+</form>
+
+<h1>button</h1>
+<form id="button">
+    <input type="submit" value="login">
+    <input type="reset" value="rewrite">
+    <input type="image" src="./img/home.png" height="15" width="15" alt="confirm">
+    <input type="button" value="Just Click!!" onclick="alert('Hello!! World!!!')">
+    <button type="button">Just Click!!!</button>
+    <button type="button"><img src="./img/home.png" height="15"></button>
+</form>
+
+<h1>Date/Time</h1>
+<form id="datetime">
+    <p>Year Month Day:
+        <input type="date" min="2023-10-01" max="2023-10-31">
+    </p>
+    <p>Month:
+        <input type="month">
+    </p>
+    <p>Week:
+        <input type="week">
+    </p>
+    <p>Time:
+        <input type="time" step="10" value="16:00:00">
+    </p>
+    <p>Local Time:
+        <input type="datetime-local" value="2023-10-01T16:00:00">
+    </p>
+</form>
+
+<h1>Output</h1>
+<form oninput="out.value=(parseInt(a.value)*parseInt(b.value))">
+    <input type="range" id="a" min="1" max="50" value="10"/>
+    *
+    <input type="number" id="b" min="1" max="100" value="20"/>
+    =
+    <output name="out" for="a b"></output>
+</form>
+
+<h1>Grouping</h1>
+<form>
+    <p><label>id: <input type="text" value="knou"></label></p>
+    <p><label>pass: <input type="password" placeholder="********"></label></p>
+    <fieldset width="100">
+        <legend>Gender</legend> <!-- Caption -->
+         <!-- label의 for속성값과 input의 id속성값으로 매치 -->
+        <label for="male">Man</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="female">Woman</label>
+        <input type="radio" id="female" name="gender" valie="female">
+    </fieldset>
+    <input type="submit">
+    <input type="reset">
+</form>
+
+<main>
+    <section>
+        <h1>웹페이지 구성요소</h1>
+        <p>HTML, CSS, Javascript</p>
+        <article>
+            <h2>HTML</h2>
+            <p>버전 5, 2014</p>
+        </article>
+        <article>
+            <h2>CSS</h2>
+            <p>모듈 3, 2012</p>
+        </article>
+        <article>
+            <h2>JavaScript</h2>
+            <p>ES 6, 2015</p>
+        </article>
+    </section>
+</main>
+<figure>
+    <img src="xxx.png" alt="rose" width="300" height="200">
+    <figcaption>장미 사진</figcaption>
+</figure>
+<details>
+    <summary>HTML</summary>
+    <p>웹페이지의 구조와 내용</p>
+    <p>표준안 발표: 2014년 10월</p>
+    <p>단일 표준화: 2019년 5월</p>
+</details>
+<details open>
+    <summary>CSS</summary>
+    <p>웹페이지의 비주얼</p>
+    <p>CSS3: 2012년</p>
+    <p>다단 등 다양한 요소 포함</p>
+</details>
+<p>기상시간: <time>07:00</time></p>
+<p>취침시간: <time>23:00</time></p>
+<p>HTML5 표준안은 <time datetime="2014-10-28">2014년 말</time>에 발표</p>
+
+<p>디스크 사용률 <meter max="100" value="70"></meter>(1TB 기준)</p>
+<p>영화 예매율 <meter min="0" max="100" value="95"></meter></p>
+<p>지방선거 투표율 <meter value="0.35" title="오후 3시 현재 투표율"></meter></p>
+
+<p>파일 다운로드 상태 <progress value="25" max="100"></progress></p>
+
+<p><ruby>読仮名<rt>よみがな</rt></ruby></p>
+<p><ruby>HTML5 웹프로그래밍<rt>HTML5, CSS, JavaScript</rt></ruby></p>
+<p>This is veryveryveryveryveryveryveryveryveryvery<wbr>veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryvery good.</p>
+    <img src="./img/sophie.jpg" width="350" usemap="#sophie">
+    <map name="sophie">
+        <area shape="rect" coords="5, 5, 100, 50" href="http://www.google.com" title="구글" target="_blank">
+        <area shape="circle" coords="100, 100, 50" href="http://www.naver.com" title="네이버" target="_blank">
+        <area shape="poly" coords="100, 50, 230, 40, 250, 150" href="http://www.daum.net" title="다음" target="_blank">
+    </map>
+
+    <a href="http://www.google.com" target="myweb">구글</a>
+    <a href="http://www.naver.com" target="myweb">네이버</a>
+    <a href="http://www.daum.net" target="myweb">다음</a>
+    <iframe src="" name="myweb" width="600" height="300" srcdoc="현재 웹에서 다른 웹페이지를 iframe에 표시"></iframe>
+
+<table>
+    <caption>테스트 차트</caption>
+    <colgroup>
+        <col style="background-color: #f00">
+        <col span="2" style="background-color: #ff0">
+        <col style="background-color: #0f0">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>가</th>
+        <th>나</th>
+        <th>다</th>
+        <th>라</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>6</td>
+        <td>8</td>
+        <td>10</td>
+        <td>12</td>
+    </tr>
+    </tfoot>
+</table>
+<audio controls>
+    <source src="./audio/1.mp3" type="audio/mp3">
+    <source src="./audio/2.mp3" type="audio/mp3">
+    <source src="./audio/3.mp3" type="audio/mp3">
+</audio>
+</body>
+</html>
